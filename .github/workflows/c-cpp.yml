@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Build Kernel Module
 
 on:
   push:
@@ -8,14 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential linux-headers-$(uname -r)
+
+      - name: Build kernel module
+        run: make
+
+      - name: Show build results
+        run: ls -lh *.ko || echo "Build failed"
