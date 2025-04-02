@@ -1,0 +1,14 @@
+# Kernel build artifacts
+*.o
+*.ko
+*.mod.*
+*.order
+*.symvers
+*.cmd
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Build scripts output
+*.log
