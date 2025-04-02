@@ -1,6 +1,6 @@
 This repository uses a dual-license structure.
 
-The file `simple.c` is licensed under the GNU General Public License v2 (GPL-2.0), as required by Linux kernel module development.
+The file simple.c is licensed under the GNU General Public License v2 (GPL-2.0), as required by Linux kernel module development.
 
 All other files in this repository (Makefile, script, documentation, etc.) are licensed under the MIT License.
 
