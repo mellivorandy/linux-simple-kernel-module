@@ -4,7 +4,6 @@ PWD  := $(shell pwd)                                # Current working directory
 
 obj-m := hello.o
 
-
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD) CC=$(CC) modules
 
