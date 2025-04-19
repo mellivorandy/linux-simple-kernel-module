@@ -62,7 +62,7 @@ Modifications were made by Andy Yo for learning and demonstration purposes.
 
 This repository uses dual licensing:
 
-- `simple.c` is licensed under the **GNU General Public License v2 (GPL-2.0)**, as required by the Linux kernel.
+- `simple.c` and `hello.c` are licensed under the **GNU General Public License v2 (GPL-2.0)**, as required by the Linux kernel.
 
 - All other files (e.g., Makefile, script, documentation) are licensed under the **MIT License**.
 
