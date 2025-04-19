@@ -3,9 +3,16 @@
 This is a minimal Linux kernel module adapted from an example in the textbook  
 > *Operating System Concepts* by Abraham Silberschatz, Greg Gagne, and Peter Baer Galvin.
 
-The module demonstrates how to load and unload a basic kernel module using `module_init`, `module_exit`, and `printk`.
+The module demonstrates how to:
+- Load and unload a basic kernel module using `module_init()` and `module_exit()`
+- Register a virtual file entry under `/proc` using `proc_create()`
+- Handle read operations with a custom `proc_read()` function
+- Print kernel messages using `printk()` for debugging and verification
 
-Note: This project is intended for educational and learning purposes.
+This project builds upon a simpler "load/remove only" module and adds interaction via the `/proc` filesystem.
+
+> [!NOTE] 
+> This project is provided for **educational and learning purposes only**, and is not intended for production use.
 
 ---
 
@@ -49,7 +56,7 @@ sudo apt install build-essential linux-headers-$(uname -r)
 
 ### Credits & Licensing
 
-This example is adapted from the textbook *Operating System Concepts* for educational purposes under fair use.
+These examples are adapted from the textbook *Operating System Concepts* for educational purposes under fair use.
 
 Modifications were made by Andy Yo for learning and demonstration purposes.
 
