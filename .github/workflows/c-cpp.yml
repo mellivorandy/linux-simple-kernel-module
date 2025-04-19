@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,8 +19,14 @@ jobs:
           sudo apt update
           sudo apt install -y build-essential linux-headers-$(uname -r)
 
-      - name: Build kernel module
-        run: make
+      - name: Build hello module
+        working-directory: ./hello
+        run: |
+          make
+          ls -lh *.ko || echo "hello module failed to build."
 
-      - name: Show build results
-        run: ls -lh *.ko || echo "Build failed"
+      - name: Build simple module
+        working-directory: ./simple
+        run: |
+          make
+          ls -lh *.ko || echo "simple module failed to build."
